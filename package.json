@@ -1,7 +1,7 @@
 {
   "name": "grunt-xml-and-xsd-validator",
   "description": "Grunt plugin to validate XML files and test if the documents are well-formed using a XSD schema",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/illfang/grunt-xml-and-xsd-validator",
   "author": {
     "name": "Kevin Kratzer",
@@ -46,7 +46,6 @@
     "well-formed"
   ],
   "dependencies": {
-    "xmldom": "0.1.19",
-    "xmllint": "0.1.0"
+    "xmldom": "0.1.19"
   }
 }
