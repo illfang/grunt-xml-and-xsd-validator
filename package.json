@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kajyr/grunt-xml-validator.git"
+    "url": "https://github.com/illfang/grunt-xml-and-xsd-validator.git"
   },
   "bugs": {
     "url": "https://github.com/illfang/grunt-xml-and-xsd-validator/issues"
