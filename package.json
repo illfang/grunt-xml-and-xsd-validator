@@ -8,6 +8,11 @@
     "email": "kratzer.kevin@gmail.com",
     "url": "https://github.com/illfang"
   },
+  "contributors": [{
+    "name": "Carlo",
+    "email": "carlo.panzi@gmail.com",
+    "url": "http://kajyr.github.io"
+  }],
   "repository": {
     "type": "git",
     "url": "https://github.com/illfang/grunt-xml-and-xsd-validator.git"

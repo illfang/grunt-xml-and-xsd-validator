@@ -7,7 +7,7 @@
  * based on the work of
  * 
  * grunt-xml-validator
- * https://github.com/panzic/grunt-xml-validator
+ * https://github.com/kajyr/grunt-xml-validator
  *
  * Copyright (c) 2014 Carlo
  * Licensed under the MIT license.

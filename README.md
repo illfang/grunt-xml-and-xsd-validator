@@ -40,7 +40,7 @@ grunt.initConfig({
 
 
 # Based on the original base XML validation of
-[grunt-xml-validator (https://github.com/panzic/grunt-xml-validator)](https://github.com/panzic/grunt-xml-validator)
+[grunt-xml-validator (https://github.com/kajyr/grunt-xml-validator)](https://github.com/kajyr/grunt-xml-validator)
 
 Copyright (c) 2014 Carlo 'kj'
 
