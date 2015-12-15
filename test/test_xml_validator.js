@@ -25,26 +25,36 @@ var exec = require('child_process').exec;
 
 exports.xml_validator = {
   valid: function(test) {
-
   test.expect(1);
-
   exec('grunt xml_validator:valid', function(error, stdout) { 
     var success = error === null;
     test.ok(success, 'Valid xml files are considered valid');
     test.done();
   });
-
   },
   invalid: function(test) {
-
     test.expect(1);
-
     exec('grunt xml_validator:invalid', function(error, stdout) { 
       var success = error !== null;
-      test.ok(success, 'Invalid xml files are not considered invalid');
+      test.ok(success, 'Invalid xml files are considered invalid');
       test.done();
 
     });
-
+  },
+  wellFormed: function(test) {
+    test.expect(1);
+    exec('grunt xml_validator:wellFormed', function(error, stdout) { 
+      var success = error === null;
+      test.ok(success, 'Well formed xml files are considered valid');
+      test.done();
+    });
+  },
+  notWellFormed: function(test) {
+    test.expect(1);
+    exec('grunt xml_validator:notWellFormed', function(error, stdout) { 
+      var success = error !== null;
+      test.ok(success, 'Well formed xml files are considered valid');
+      test.done();
+    });
   }
 };

@@ -1,4 +1,11 @@
 /*
+ * grunt-xml-and-xsd-validator
+ * https://github.com/illfang/grunt-xml-and-xsd-validator
+ *
+ * Copyright (c) 2015 Kevin Kratzer and below
+ * 
+ * based on the work of
+ * 
  * grunt-xml-validator
  * https://github.com/panzic/grunt-xml-validator
  *
@@ -16,24 +23,39 @@ module.exports = function(grunt) {
     // Configuration to be run (and then tested).
     xml_validator: {
       valid: {
-      src: [  'test/fixtures/example_ok.xml' ]
+        src: [  'test/fixtures/example_ok.xml' ]
       },
       invalid: {
-      src: [ 'test/fixtures/example_fail.xml' ]
-      }
+        src: [ 'test/fixtures/example_fail.xml' ]
+      },
+      wellFormed: {
+        src: [  'test/fixtures/example_ok.xml' ],
+        options: {
+          xsd: 'test/fixtures/example_schema.xsd'
+        }
+      },
+      notWellFormed: {
+        src: [  'test/fixtures/example_ok_not_well_formed.xml' ],
+        options: {
+          xsd: 'test/fixtures/example_schema.xsd'
+        }
+      },
     },
 
     // Unit tests.
     nodeunit: {
-      tests: ['test/test_*.js'],
+      tests: ['test/test_*.js']
     },
 
     coffee: {
       compile: {
         files: {
           'tasks/xml_validator.js': ['tasks/xml_validator.coffee']
-        }
         },
+        options: {
+          header: true,
+        }
+      },
     },
     watch: {
       scripts: {
@@ -44,7 +66,6 @@ module.exports = function(grunt) {
         },
       },
     }
-
   });
 
   // Actually load this plugin's task(s).
