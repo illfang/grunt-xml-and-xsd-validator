@@ -8,31 +8,31 @@
 
 module.exports = (grunt) ->
 
-	grunt.registerMultiTask('xml_validator', 'Grunt plugin to validate XML files', () ->
+  grunt.registerMultiTask('xml_validator', 'Grunt plugin to validate XML files', () ->
 
-		DOMParser = require('xmldom').DOMParser
+    DOMParser = require('xmldom').DOMParser
+      
+    valid = 0
+    fail = false
 
-		valid = 0
-		fail = false
+    this.filesSrc.forEach( (f) ->
 
-		this.filesSrc.forEach( (f) ->
+      xml = grunt.file.read(f)
 
-			xml = grunt.file.read(f)
+      doc = new DOMParser({
+        locator:{},
 
-			doc = new DOMParser({
-				locator:{},
+        errorHandler: (level, msg) ->
+          fail = true
+          grunt.log.error f + "\tnot valid"
 
-				errorHandler: (level, msg) ->
-					fail = true
-					grunt.log.error f + "\tnot valid"
+      }).parseFromString(xml,'text/xml')
 
-			}).parseFromString(xml,'text/xml')
+    )
 
-		)
-
-		if fail 
-			grunt.fail.warn 'Some files are not valid'
-		else
-			grunt.log.ok this.filesSrc.length + ' files valid'
-			
-	)
+    if fail 
+      grunt.fail.warn 'Some files are not valid'
+    else
+      grunt.log.ok this.filesSrc.length + ' files valid'
+      
+  )
