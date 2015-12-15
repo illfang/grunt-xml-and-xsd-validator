@@ -20,12 +20,7 @@
   "bugs": {
     "url": "https://github.com/illfang/grunt-xml-and-xsd-validator/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/illfang/grunt-xml-and-xsd-validator/blob/master/LICENSE-MIT"
-    }
-  ],
+  "license": "MIT",
   "engines": {
     "node": ">= 0.12.4"
   },
