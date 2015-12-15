@@ -16,10 +16,10 @@ module.exports = function(grunt) {
     // Configuration to be run (and then tested).
     xml_validator: {
       valid: {
-			src: [	'test/fixtures/example_ok.xml' ]
+      src: [  'test/fixtures/example_ok.xml' ]
       },
       invalid: {
-			src: [ 'test/fixtures/example_fail.xml' ]
+      src: [ 'test/fixtures/example_fail.xml' ]
       }
     },
 
@@ -29,21 +29,21 @@ module.exports = function(grunt) {
     },
 
     coffee: {
-			compile: {
-				files: {
-					'tasks/xml_validator.js': ['tasks/xml_validator.coffee']
-				}
-			  },
-		},
-		watch: {
-			scripts: {
-				files: ['tasks/*.coffee'],
-				tasks: ['coffee'],
-				options: {
-					spawn: false,
-				},
-			},
-		}
+      compile: {
+        files: {
+          'tasks/xml_validator.js': ['tasks/xml_validator.coffee']
+        }
+        },
+    },
+    watch: {
+      scripts: {
+        files: ['tasks/*.coffee'],
+        tasks: ['coffee'],
+        options: {
+          spawn: false,
+        },
+      },
+    }
 
   });
 
