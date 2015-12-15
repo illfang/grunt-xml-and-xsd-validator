@@ -18,7 +18,7 @@ module.exports = (grunt) ->
   grunt.registerMultiTask('xml_validator', 'Grunt plugin to validate XML files', () ->
 
     DOMParser = require('xmldom').DOMParser
-    xmllint = require('xmllint')
+    xmllint = require('./xmllint')
     fail = false
     schema = null
     
